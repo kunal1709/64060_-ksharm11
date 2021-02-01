@@ -1,0 +1,90 @@
+---
+title: "ASSINGMENT1"
+output:
+  word_document: default
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+---
+output:
+  word_document: default
+  html_document: default
+---
+
+## KUNAL SHARMA
+
+#Load dataset packages
+```{r}
+```
+#import the excel file into the global environment
+```{r}
+
+data <- read.csv('A:/DATA_SETS/a1-cereals.csv')
+```
+#head and  tail function 
+```{r}
+head(data)
+
+tail(data)
+```
+#Working with functions for Stats
+```{r}
+min(data$Fat)
+max(data$Fiber)
+range(data$Vitamins)
+mean(data$Weight)
+median(data$Protein)
+```
+
+# function will give the summary of  data 
+```{r}
+summary(data)
+
+```
+#str function will structure the data 
+```{r}
+str(data)
+```
+
+```{r}
+plot(data)
+```
+#X-Y plot for two quantitative variables(Scatterplot)
+```{r}
+plot(x= data$Carbohydrates, y=data$Sugars,
+     xlab = "Carbs",
+     ylab = "SugarContent",
+     xlim = c(10,20),
+     ylim = c(2,10),
+     main = "Carbs with Sugars")
+
+```
+#Add some Options
+```{r}
+plot(data$Carbohydrates,data$Sugars)
+```
+#Plotting a quantitative variable Audience_Size
+```{r}
+plot(data$Weight)
+```
+#LineplotHistogram,Boxplot
+```{r}
+hist(data$Protein,main = "HISTOGRAM")
+boxplot(data$Potassium,data$Vitamins,main="BOXPLOT")
+plot(x= data$Carbohydrates, y=data$Sugars,
+
+     xlab = "Carbs",
+     ylab = "SugarContent",
+	 type="l",main="Example of Sugar and Carbs COntent")
+
+```
+
+#The End
+
+
+
+
