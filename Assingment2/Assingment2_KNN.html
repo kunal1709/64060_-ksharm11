@@ -680,9 +680,7 @@ CrossTable(TesTraining_Outcome2,Knn_testing, prop.chisq = FALSE)</code></pre>
 ## ---------------------|-----------|-----------|-----------|
 ## 
 ## </code></pre>
-<pre class="r"><code>#accuracy 
-
-#total
+<pre class="r"><code>#total
 Knn_total &lt;- knn(Training_Data2, Total_Data2, cl=Training_Outcome2, k =best_fit$k, prob = TRUE)
 CrossTable(Total_Outcome2,Knn_total, prop.chisq = FALSE)</code></pre>
 <pre><code>## 
@@ -717,6 +715,10 @@ CrossTable(Total_Outcome2,Knn_total, prop.chisq = FALSE)</code></pre>
 ## ---------------|-----------|-----------|-----------|
 ## 
 ## </code></pre>
+<p>#Accuracy: Validation:95.73% test:96.49% total: 97.18%</p>
+</div>
+<div id="section" class="section level1">
+<h1>.</h1>
 <p>#COMMENTS: When we apply the KNN model to various datasets, we can see that the significance of accuracy continues to change. The precision shift may be due to the partition being biased i.e. into 3 sets of Training into 50 %, Validation into 30% and rest 20% for test set. The data in each of the partitioned datasets is different, and due to the type of attribute we chose to partition the dataset, bias will occur.</p>
 </div>
 
