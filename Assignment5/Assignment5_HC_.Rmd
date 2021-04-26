@@ -3,9 +3,9 @@ title: "Assignment5_HC"
 author: "Kunal Sharma"
 date: "April 25, 2021"
 output:
-  word_document: default
-  pdf_document: default
   html_document: default
+  pdf_document: default
+  word_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -167,6 +167,9 @@ paste("clearly cluster 1 has maximum rating", max(a)," hence we'll choose it")
 ```
 
 We must normalize data since we are using the distance metic algorithm. Since the features of data vary, we must scale it to similar features.
+And Yes, data should be normalized.
+Having non-normalized Data would simply disregard the attribute with the smaller range.
+
 ```{r}
 
 ```

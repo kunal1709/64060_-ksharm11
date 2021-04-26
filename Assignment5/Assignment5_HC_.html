@@ -553,7 +553,7 @@ for (i in 1:7){
 a&lt;-cbind(Cluster1,Cluster2,Cluster3,Cluster4,Cluster5,Cluster6,Cluster7)
 paste(&quot;clearly cluster 1 has maximum rating&quot;, max(a),&quot; hence we&#39;ll choose it&quot;)</code></pre>
 <pre><code>## [1] &quot;clearly cluster 1 has maximum rating 73.8444633333333  hence we&#39;ll choose it&quot;</code></pre>
-<p>We must normalize data since we are using the distance metic algorithm. Since the features of data vary, we must scale it to similar features.</p>
+<p>We must normalize data since we are using the distance metic algorithm. Since the features of data vary, we must scale it to similar features. And Yes, data should be normalized. Having non-normalized Data would simply disregard the attribute with the smaller range.</p>
 
 
 
