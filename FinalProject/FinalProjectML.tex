@@ -1,0 +1,450 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={FinalProjectML},
+  pdfauthor={Kunal Sharma},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\title{FinalProjectML}
+\author{Kunal Sharma}
+\date{07/05/2021}
+
+\begin{document}
+\maketitle
+
+Problem Statement:
+
+CRISA has traditionally segmented markets on the basis of purchaser
+demographics. They would now like to segment the market based on two key
+sets of variables more directly related to the purchase process and to
+brand loyalty: 1. Purchase behavior (volume, frequency, susceptibility
+to discounts, and brand loyalty) 2. Basis of purchase (price, selling
+proposition) Doing so would allow CRISA to gain information about what
+demographic attributes are associated with different purchase behaviors
+and degrees of brand loyalty, and thus deploy promotion budgets more
+effectively. More effective market segmentation would enable CRISA's
+clients (in this case, a firm called IMRB) to design more cost-effective
+promotions targeted at appropriate segments. Thus, multiple promotions
+could be launched, each targeted at different market segments at
+different times of the year. This would result in a more cost-effective
+allocation of the promotion budget to different market segments. It
+would also enable IMRB to design more effective customer reward systems
+and thereby increase brand loyalty.
+
+Question 1. Use k-means clustering to identify clusters of households
+based on:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  The variables that describe purchase behavior (including brand
+  loyalty)
+\item
+  The variables that describe the basis for purchase
+\item
+  The variables that describe both purchase behavior and basis of
+  purchase
+\end{enumerate}
+
+Note 1: How should k be chosen? Think about how the clusters would be
+used. It is likely that the marketing efforts would support two to five
+different promotional approaches. Note 2: How should the percentages of
+total purchases comprised by various brands be treated? Isn't a customer
+who buys all brand A just as loyal as a customer who buys all brand B?
+What will be the effect on any distance measure of using the brand share
+variables as is? Consider using a single derived variable.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  Select what you think is the best segmentation and comment on the
+  characteristics (demographic, brand loyalty, and basis for purchase)
+  of these clusters. (This information would be used to guide the
+  development of advertising and promotional campaigns.)
+\item
+  Develop a model that classifies the data into these segments. Since
+  this information would most likely be used in targeting direct-mail
+  promotions, it would be useful to select a market segment that would
+  be defined as a success in the classification model.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(dplyr)}
+\KeywordTok{library}\NormalTok{(ISLR)}
+\KeywordTok{library}\NormalTok{(caret)}
+\KeywordTok{library}\NormalTok{(factoextra)}
+\KeywordTok{library}\NormalTok{(GGally)}
+\KeywordTok{set.seed}\NormalTok{(}\DecValTok{123}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Reading And Cleaning the Data
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{BathSoap<-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"C://Users//admin//Downloads//BathSoap.csv"}\NormalTok{)}
+
+\NormalTok{BSData <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\KeywordTok{sapply}\NormalTok{(BathSoap, }\ControlFlowTok{function}\NormalTok{(x) }\KeywordTok{as.numeric}\NormalTok{(}\KeywordTok{gsub}\NormalTok{(}\StringTok{"%"}\NormalTok{, }\StringTok{""}\NormalTok{, x))))}
+\end{Highlighting}
+\end{Shaded}
+
+For computing brand loyalty, we used data from branded purchases based
+on the customer's purchase percentage on the Brand code, then found the
+highest brand loyal percentage and compared it to the other 999 brand
+purchases.
+
+When a customer is loyal to a business, the Max Brand purchase
+percentage is higher than the Other Brand purchase percentage. As a
+consequence, the Customer's brand loyalty is created.
+
+With k = 2, we use the kmeans clustering model to group the attributes
+that define brand loyalty into ``Brand Loyal Customers'' and ``Not Brand
+Loyal Customers.''
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Loyal <-}\StringTok{ }\NormalTok{BSData[,}\DecValTok{23}\OperatorTok{:}\DecValTok{31}\NormalTok{]}
+
+\NormalTok{Loyal}\OperatorTok{$}\NormalTok{MaxBrand <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(Loyal,}\DecValTok{1}\NormalTok{,max)}
+
+\NormalTok{BathSoapBrandLoyalty <-}\StringTok{ }\KeywordTok{cbind}\NormalTok{(BSData[,}\KeywordTok{c}\NormalTok{(}\DecValTok{19}\NormalTok{, }\DecValTok{13}\NormalTok{, }\DecValTok{15}\NormalTok{, }\DecValTok{12}\NormalTok{, }\DecValTok{31}\NormalTok{, }\DecValTok{14}\NormalTok{, }\DecValTok{16}\NormalTok{,}\DecValTok{20}\NormalTok{)], }\DataTypeTok{MaxLoyal =}\NormalTok{ Loyal}\OperatorTok{$}\NormalTok{MaxBrand)}
+
+\NormalTok{BathSoapBrandLoyalty <-}\StringTok{ }\KeywordTok{scale}\NormalTok{(BathSoapBrandLoyalty)}
+
+\NormalTok{K_model_}\DecValTok{2}\NormalTok{ <-}\StringTok{ }\KeywordTok{kmeans}\NormalTok{(BathSoapBrandLoyalty, }\DataTypeTok{centers =} \DecValTok{2}\NormalTok{, }\DataTypeTok{nstart =} \DecValTok{25}\NormalTok{)}
+
+\NormalTok{BathSoapBrandLoyalty <-}\StringTok{ }\KeywordTok{cbind}\NormalTok{(BathSoapBrandLoyalty, }\DataTypeTok{Cluster =}\NormalTok{ K_model_}\DecValTok{2}\OperatorTok{$}\NormalTok{cluster)}
+
+\KeywordTok{fviz_cluster}\NormalTok{(K_model_}\DecValTok{2}\NormalTok{, }\DataTypeTok{data =}\NormalTok{ BathSoapBrandLoyalty)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-3-1.pdf}
+Customers in Cluster 1 are Brand Loyal, while customers in Cluster 2 are
+Brand Disloyal because they are unconcerned regarding products.
+
+However, if we cluster them based on k = 4, we get the clusters shown
+below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{K_model_}\DecValTok{2}\NormalTok{ <-}\StringTok{ }\KeywordTok{kmeans}\NormalTok{(BathSoapBrandLoyalty, }\DataTypeTok{centers =} \DecValTok{4}\NormalTok{, }\DataTypeTok{nstart =} \DecValTok{25}\NormalTok{)}
+
+\NormalTok{BathSoapBrandLoyalty_}\DecValTok{4}\NormalTok{ <-}\StringTok{ }\KeywordTok{cbind}\NormalTok{(BathSoapBrandLoyalty[,}\OperatorTok{-}\DecValTok{10}\NormalTok{], }\DataTypeTok{Cluster =}\NormalTok{ K_model_}\DecValTok{2}\OperatorTok{$}\NormalTok{cluster)}
+
+\KeywordTok{fviz_cluster}\NormalTok{(K_model_}\DecValTok{2}\NormalTok{, }\DataTypeTok{data =}\NormalTok{ BathSoapBrandLoyalty_}\DecValTok{4}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-4-1.pdf}
+
+Let's take a look at the data for consumer purchase conduct.
+
+Here, for Selling Proposition we've considered all of the selling
+propositions, selected the best of them, and compared them to show which
+are the most successful selling propositions to consider for the Model.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{BathSoap_SP <-}\StringTok{ }\NormalTok{BSData[,}\DecValTok{36}\OperatorTok{:}\DecValTok{46}\NormalTok{]}
+
+\NormalTok{BathSoap_SP}\OperatorTok{$}\NormalTok{Max <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(BathSoap_SP,}\DecValTok{1}\NormalTok{,max)}
+\NormalTok{BathSoap_SP}\OperatorTok{$}\NormalTok{MaxBrand <-}\StringTok{ }\KeywordTok{colnames}\NormalTok{(BathSoap_SP)[}\KeywordTok{apply}\NormalTok{(BathSoap_SP,}\DecValTok{1}\NormalTok{,which.max)]}
+\end{Highlighting}
+\end{Shaded}
+
+For the Price Catagories,catogories that are similar. Also the same can
+be said for promotions.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{PriceCategory <-}\StringTok{ }\NormalTok{BSData[,}\DecValTok{32}\OperatorTok{:}\DecValTok{35}\NormalTok{]}
+\NormalTok{PriceCategory}\OperatorTok{$}\NormalTok{Max <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(PriceCategory,}\DecValTok{1}\NormalTok{,max)}
+\NormalTok{PriceCategory}\OperatorTok{$}\NormalTok{MaxBrand <-}\StringTok{ }\KeywordTok{colnames}\NormalTok{(PriceCategory)[}\KeywordTok{apply}\NormalTok{(PriceCategory,}\DecValTok{1}\NormalTok{,which.max)]}
+
+\KeywordTok{table}\NormalTok{(PriceCategory}\OperatorTok{$}\NormalTok{MaxBrand)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Pr.Cat.1 Pr.Cat.2 Pr.Cat.3 Pr.Cat.4 
+##      132      343       78       47
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Promo <-}\StringTok{ }\NormalTok{BSData[,}\DecValTok{20}\OperatorTok{:}\DecValTok{22}\NormalTok{]}
+\NormalTok{Promo}\OperatorTok{$}\NormalTok{Max <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(Promo,}\DecValTok{1}\NormalTok{,max)}
+\NormalTok{Promo}\OperatorTok{$}\NormalTok{MaxBrand <-}\StringTok{ }\KeywordTok{colnames}\NormalTok{(Promo)[}\KeywordTok{apply}\NormalTok{(Promo,}\DecValTok{1}\NormalTok{,which.max)]}
+
+\KeywordTok{table}\NormalTok{(Promo}\OperatorTok{$}\NormalTok{MaxBrand)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Pur.Vol.No.Promo.... Pur.Vol.Other.Promo..     Pur.Vol.Promo.6.. 
+##                   595                     1                     4
+\end{verbatim}
+
+As a result, we've only considered the more powerful Selling
+Propositions when evaluating their effect. The same can be said for
+promotions and price categories.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{CustomerPurchaseBehaviour <-}\StringTok{ }\NormalTok{BSData[,}\KeywordTok{c}\NormalTok{(}\DecValTok{32}\NormalTok{,}\DecValTok{33}\NormalTok{,}\DecValTok{34}\NormalTok{,}\DecValTok{35}\NormalTok{,}\DecValTok{36}\NormalTok{,}\DecValTok{45}\NormalTok{)]}
+\NormalTok{CustomerPurchaseBehaviour <-}\StringTok{ }\KeywordTok{scale}\NormalTok{(CustomerPurchaseBehaviour)}
+\CommentTok{#View(CustomerPurchaseBehaviour)}
+
+\KeywordTok{fviz_nbclust}\NormalTok{(CustomerPurchaseBehaviour, kmeans, }\DataTypeTok{method =} \StringTok{"silhouette"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-7-1.pdf}
+The K means Clustering model is computed in order to measure the
+customer's purchasing pattern. In this case, k = 4 will be used.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Purchase_K_model <-}\StringTok{ }\KeywordTok{kmeans}\NormalTok{(CustomerPurchaseBehaviour, }\DataTypeTok{centers =} \DecValTok{4}\NormalTok{, }\DataTypeTok{nstart =} \DecValTok{25}\NormalTok{)}
+
+\NormalTok{CustomerPurchaseBehaviour <-}\StringTok{ }\KeywordTok{cbind}\NormalTok{(CustomerPurchaseBehaviour, }\DataTypeTok{Cluster =}\NormalTok{ Purchase_K_model}\OperatorTok{$}\NormalTok{cluster)}
+\CommentTok{#View(CustomerPurchaseBehaviour)}
+
+\KeywordTok{fviz_cluster}\NormalTok{(Purchase_K_model, }\DataTypeTok{data =}\NormalTok{ CustomerPurchaseBehaviour)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+Now we must understand the consumers' brand loyalty as well as their
+purchasing behavior while developing a concept.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{LoyalPurchase <-}\StringTok{ }\KeywordTok{cbind}\NormalTok{(BathSoapBrandLoyalty[,}\OperatorTok{-}\DecValTok{10}\NormalTok{], CustomerPurchaseBehaviour[,}\OperatorTok{-}\DecValTok{7}\NormalTok{])}
+
+\KeywordTok{fviz_nbclust}\NormalTok{(LoyalPurchase, kmeans, }\DataTypeTok{method =} \StringTok{"silhouette"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-9-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{K_Means_All <-}\StringTok{ }\KeywordTok{kmeans}\NormalTok{(LoyalPurchase, }\DataTypeTok{centers =} \DecValTok{4}\NormalTok{, }\DataTypeTok{nstart =} \DecValTok{25}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+When plotting the model for k = 4 and k = 5, we can see that the aspects
+can be resolved by simply using 4 clusters without drawing another 1. As
+a result, we'll use k = 4 here.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{LoyalPurchase <-}\StringTok{ }\KeywordTok{cbind}\NormalTok{(LoyalPurchase, }\DataTypeTok{Cluster =} \KeywordTok{as.data.frame}\NormalTok{(K_Means_All}\OperatorTok{$}\NormalTok{cluster))}
+\NormalTok{clusters <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"1"}\NormalTok{,}\StringTok{"2"}\NormalTok{,}\StringTok{"3"}\NormalTok{,}\StringTok{"4"}\NormalTok{),}\DataTypeTok{nrow =} \DecValTok{4}\NormalTok{)}
+\NormalTok{LoyalPurchase_Centroids <-}\StringTok{ }\KeywordTok{cbind}\NormalTok{(clusters,}\KeywordTok{as.data.frame}\NormalTok{(K_Means_All}\OperatorTok{$}\NormalTok{centers))}
+
+\KeywordTok{ggparcoord}\NormalTok{(LoyalPurchase_Centroids,}
+           \DataTypeTok{columns =} \DecValTok{2}\OperatorTok{:}\DecValTok{16}\NormalTok{, }\DataTypeTok{groupColumn =} \DecValTok{1}\NormalTok{,}
+           \DataTypeTok{showPoints =} \OtherTok{TRUE}\NormalTok{, }
+           \DataTypeTok{title =} \StringTok{"Parallel Coordinate Plot for for Bathsoap Data - K = 4"}\NormalTok{,}
+           \DataTypeTok{alphaLines =} \FloatTok{0.5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-10-1.pdf}
+
+For each cluster, the Demographic result is computed.
+
+We're simply attempting to decipher the demographic values of each
+cluster.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Demographics <-}\KeywordTok{cbind}\NormalTok{(BSData[,}\DecValTok{2}\OperatorTok{:}\DecValTok{11}\NormalTok{], }\DataTypeTok{ClusterVal =}\NormalTok{ K_Means_All}\OperatorTok{$}\NormalTok{cluster)}
+
+\NormalTok{Centre_}\DecValTok{1}\NormalTok{ <-}\StringTok{ }\KeywordTok{colMeans}\NormalTok{(Demographics[Demographics}\OperatorTok{$}\NormalTok{ClusterVal }\OperatorTok{==}\StringTok{ "1"}\NormalTok{,])}
+\NormalTok{Centre_}\DecValTok{2}\NormalTok{ <-}\StringTok{ }\KeywordTok{colMeans}\NormalTok{(Demographics[Demographics}\OperatorTok{$}\NormalTok{ClusterVal }\OperatorTok{==}\StringTok{ "2"}\NormalTok{,])}
+\NormalTok{Centre_}\DecValTok{3}\NormalTok{ <-}\StringTok{ }\KeywordTok{colMeans}\NormalTok{(Demographics[Demographics}\OperatorTok{$}\NormalTok{ClusterVal }\OperatorTok{==}\StringTok{ "3"}\NormalTok{,])}
+\NormalTok{Centre_}\DecValTok{4}\NormalTok{ <-}\StringTok{ }\KeywordTok{colMeans}\NormalTok{(Demographics[Demographics}\OperatorTok{$}\NormalTok{ClusterVal }\OperatorTok{==}\StringTok{ "4"}\NormalTok{,])}
+
+\NormalTok{Centroid <-}\StringTok{ }\KeywordTok{rbind}\NormalTok{(Centre_}\DecValTok{1}\NormalTok{, Centre_}\DecValTok{2}\NormalTok{, Centre_}\DecValTok{3}\NormalTok{, Centre_}\DecValTok{4}\NormalTok{)}
+
+\KeywordTok{ggparcoord}\NormalTok{(Centroid,}
+           \DataTypeTok{columns =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{8}\NormalTok{), }\DataTypeTok{groupColumn =} \DecValTok{11}\NormalTok{,}
+           \DataTypeTok{showPoints =} \OtherTok{TRUE}\NormalTok{, }
+           \DataTypeTok{title =} \StringTok{"Demographic Metrics for Bathsoap Data Plotted in Parallel Coordinate Plot- K = 4"}\NormalTok{,}
+           \DataTypeTok{alphaLines =} \FloatTok{0.5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-11-1.pdf}
+
+We are presenting it in a barplot since there are a few attributes that
+are categorical.
+
+Plotting Eating Habit Frequency (Not Specified,Vegetarian Who Eats Eggs,
+Vegetarian,Non-Vegetarian):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{barplot}\NormalTok{(}\KeywordTok{table}\NormalTok{(BSData}\OperatorTok{$}\NormalTok{FEH,K_Means_All}\OperatorTok{$}\NormalTok{cluster), }\DataTypeTok{xlab =} \StringTok{"Clusters"}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{"Frequency of Eating Habit"}\NormalTok{, }\DataTypeTok{main =} \StringTok{"The Eating Habit Frequency for each cluster"}\NormalTok{,}\DataTypeTok{horiz=}\OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-12-1.pdf}
+
+Plotting the Frequency of Gender(NA, Male, Female):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{barplot}\NormalTok{(}\KeywordTok{table}\NormalTok{(BSData}\OperatorTok{$}\NormalTok{SEX,K_Means_All}\OperatorTok{$}\NormalTok{cluster), }\DataTypeTok{xlab =} \StringTok{"Clusters"}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{"Frequency of Gender"}\NormalTok{, }\DataTypeTok{main =} \StringTok{"The Gender Frequency for each cluster"}\NormalTok{,}\DataTypeTok{horiz=}\OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-13-1.pdf}
+The female population has a higher purchasing rate, with females from
+clusters 1 and 2 having the most females.
+
+Plotting the Television Availability Frequency (Unspecified,
+Availability, Not Available):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{barplot}\NormalTok{(}\KeywordTok{table}\NormalTok{(BSData}\OperatorTok{$}\NormalTok{CS, K_Means_All}\OperatorTok{$}\NormalTok{cluster), }\DataTypeTok{xlab =} \StringTok{"Clusters"}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{"Frequency of Television availability"}\NormalTok{, }\DataTypeTok{main =} \StringTok{"The frequency of television availability"}\NormalTok{,}\DataTypeTok{horiz=}\OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-14-1.pdf}
+
+Since almost all viewers have access to television, having a promotional
+offer on television can be effective in attracting customers.
+
+Even, for those with codes 5 and 14, the Selling Proposition is strong.
+These are strong perpositions, Henec, and they can be used in the
+future.
+
+Similarly, Price Catagory 1 and 2 have received positive feedback, so
+they can be used again in the future to attract customers' attention.
+
+Customers in cluster 1 often have a higher educational level, implying
+that they have a decent job and that their email is reviewed often,
+allowing for the mailing of promotions.
+
+Now, if we consider the remediation for a higher profit on the soaps to
+be sold, we can conclude that Cluster 3 customers are brand loyal. Thus,
+any promotional deals for branded soaps can be sent to Cluster 3
+customers.
+
+Similarly, Cluster 4 consumers are ignorant about promotional deals, but
+their sales are still high, so sending them a promotional email will not
+help us make a lot of money. Rather, the Cluster 1 customers who buy
+over the promotions are the most numerous, and they should be the mail
+priority.
+
+Where the Average Price is higher, the profit range can be expanded. As
+a result, Cluster 3 consumers will concentrate on sending high-priced
+products to the mail for recommendations.
+
+\end{document}
