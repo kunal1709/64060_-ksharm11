@@ -1,0 +1,454 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Assignment5\_HC},
+  pdfauthor={Kunal Sharma},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{Assignment5\_HC}
+\author{Kunal Sharma}
+\date{April 25, 2021}
+
+\begin{document}
+\maketitle
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(cluster)}
+\FunctionTok{library}\NormalTok{(caret)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: lattice
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: ggplot2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dendextend)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## ---------------------
+## Welcome to dendextend version 1.14.0
+## Type citation('dendextend') for how to cite the package.
+## 
+## Type browseVignettes(package = 'dendextend') for the package vignette.
+## The github page is: https://github.com/talgalili/dendextend/
+## 
+## Suggestions and bug-reports can be submitted at: https://github.com/talgalili/dendextend/issues
+## Or contact: <tal.galili@gmail.com>
+## 
+##  To suppress this message use:  suppressPackageStartupMessages(library(dendextend))
+## ---------------------
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'dendextend'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:stats':
+## 
+##     cutree
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(factoextra)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Welcome! Want to learn more? See two factoextra-related books at https://goo.gl/ve3WBa
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(purrr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'purrr'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:caret':
+## 
+##     lift
+\end{verbatim}
+
+Apply hierarchical clustering to the data using Euclidean distance to
+the normalized measurements. Use Agnes to compare the clustering from
+single linkage, complete linkage, average linkage, and Ward. Choose the
+best method.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{c\_data }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"A:/DATA\_SETS/Cereals.csv"}\NormalTok{)}
+\FunctionTok{sum}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(c\_data))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{c\_data }\OtherTok{\textless{}{-}} \FunctionTok{na.omit}\NormalTok{(c\_data)}
+\NormalTok{c\_data }\OtherTok{\textless{}{-}}\NormalTok{ c\_data[,}\DecValTok{4}\SpecialCharTok{:}\DecValTok{16}\NormalTok{]}
+\NormalTok{c\_data }\OtherTok{\textless{}{-}} \FunctionTok{scale}\NormalTok{(c\_data, }\AttributeTok{center =}\NormalTok{ T, }\AttributeTok{scale =}\NormalTok{ T)}
+
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{123}\NormalTok{)}
+
+\CommentTok{\# Dissimilarity matrix}
+\NormalTok{euclidean\_dist }\OtherTok{\textless{}{-}} \FunctionTok{dist}\NormalTok{(c\_data, }\AttributeTok{method =} \StringTok{"euclidean"}\NormalTok{)}
+
+
+\NormalTok{method }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{( }\StringTok{"average"}\NormalTok{, }\StringTok{"single"}\NormalTok{, }\StringTok{"complete"}\NormalTok{, }\StringTok{"ward"}\NormalTok{)}
+\FunctionTok{names}\NormalTok{(method) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{( }\StringTok{"average"}\NormalTok{, }\StringTok{"single"}\NormalTok{, }\StringTok{"complete"}\NormalTok{, }\StringTok{"ward"}\NormalTok{)}
+\NormalTok{ac\_values }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x) \{}
+  
+  \FunctionTok{agnes}\NormalTok{(euclidean\_dist, }\AttributeTok{method =}\NormalTok{ x)}\SpecialCharTok{$}\NormalTok{ac}
+\NormalTok{\}}
+
+\FunctionTok{map\_dbl}\NormalTok{(method, ac\_values)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   average    single  complete      ward 
+## 0.7766075 0.6067859 0.8353712 0.9046042
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#The agglomerative coefficient obtained by Ward\textquotesingle{}s method is the largest. }
+\CommentTok{\#Let\textquotesingle{}s take a peek at the dendogram.}
+
+\NormalTok{hc\_ward }\OtherTok{\textless{}{-}} \FunctionTok{agnes}\NormalTok{(euclidean\_dist, }\AttributeTok{method =} \StringTok{"ward"}\NormalTok{)}
+\FunctionTok{pltree}\NormalTok{(hc\_ward, }\AttributeTok{cex =} \FloatTok{0.5}\NormalTok{, }\AttributeTok{hang =} \SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\AttributeTok{main =} \StringTok{"Dendrogram of agnes for ward"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assignment5_HC__files/figure-latex/unnamed-chunk-2-1.pdf}
+How many clusters would you choose?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#install.packages("NbClust")}
+
+\NormalTok{hc\_ward }\OtherTok{\textless{}{-}} \FunctionTok{agnes}\NormalTok{(euclidean\_dist, }\AttributeTok{method =} \StringTok{"ward"}\NormalTok{)}
+\FunctionTok{pltree}\NormalTok{(hc\_ward, }\AttributeTok{cex =} \FloatTok{0.5}\NormalTok{, }\AttributeTok{hang =} \SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\AttributeTok{main =} \StringTok{"Dendrogram of agnes for ward"}\NormalTok{)}
+
+\CommentTok{\#install.packages("NbClust")}
+\FunctionTok{library}\NormalTok{(NbClust)}
+\NormalTok{num\_of\_clust }\OtherTok{=} \FunctionTok{NbClust}\NormalTok{(c\_data, }\AttributeTok{distance =} \StringTok{"euclidean"}\NormalTok{, }\AttributeTok{min.nc =} \DecValTok{5}\NormalTok{, }\AttributeTok{max.nc =} \DecValTok{10}\NormalTok{, }\AttributeTok{method =} \StringTok{"ward.D"}\NormalTok{,}\AttributeTok{index =} \StringTok{\textquotesingle{}dunn\textquotesingle{}}\NormalTok{)}
+\NormalTok{num\_of\_clust}\SpecialCharTok{$}\NormalTok{Best.nc}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Number_clusters     Value_Index 
+##          7.0000          0.2604
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#After checking NbClust value for best number of clusters, the best fits is with K=7}
+\FunctionTok{rect.hclust}\NormalTok{(hc\_ward, }\AttributeTok{k =} \DecValTok{7}\NormalTok{, }\AttributeTok{border =} \DecValTok{2}\SpecialCharTok{:}\DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assignment5_HC__files/figure-latex/unnamed-chunk-3-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{clust\_comp }\OtherTok{\textless{}{-}} \FunctionTok{cutree}\NormalTok{(hc\_ward, }\AttributeTok{k =} \DecValTok{7}\NormalTok{)}
+\NormalTok{temp3 }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(}\FunctionTok{as.data.frame}\NormalTok{(}\FunctionTok{cbind}\NormalTok{(c\_data,clust\_comp)))}
+\end{Highlighting}
+\end{Shaded}
+
+Comment on the structure of the clusters and on their stability. Hint:
+To check stability, partition the data and see how well clusters formed
+based on one part apply to the other part. To do this: ● Cluster
+partition A ● Use the cluster centroids from A to assign each record in
+partition B (each record is assigned to the cluster with the closest
+centroid). ● Assess how consistent the cluster assignments are compared
+to the assignments based on all the data
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{c\_data }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"A:/DATA\_SETS/Cereals.csv"}\NormalTok{)}
+\FunctionTok{sum}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(c\_data))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{c\_data }\OtherTok{\textless{}{-}} \FunctionTok{na.omit}\NormalTok{(c\_data)}
+\NormalTok{c\_data }\OtherTok{\textless{}{-}}\NormalTok{ c\_data[,}\DecValTok{4}\SpecialCharTok{:}\DecValTok{16}\NormalTok{]}
+\CommentTok{\# Creating Partitions for into two data  }
+\NormalTok{c\_partition\_A }\OtherTok{\textless{}{-}}\NormalTok{ c\_data[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{37}\NormalTok{,]}
+\NormalTok{c\_partition\_B }\OtherTok{\textless{}{-}}\NormalTok{ c\_data[}\DecValTok{38}\SpecialCharTok{:}\DecValTok{74}\NormalTok{,]}
+\NormalTok{c\_partition\_A }\OtherTok{\textless{}{-}} \FunctionTok{scale}\NormalTok{(c\_partition\_A, }\AttributeTok{center =}\NormalTok{ T, }\AttributeTok{scale =}\NormalTok{ T)}
+\NormalTok{c\_partition\_B }\OtherTok{\textless{}{-}} \FunctionTok{scale}\NormalTok{(c\_partition\_B, }\AttributeTok{center =}\NormalTok{ T, }\AttributeTok{scale =}\NormalTok{ T)}
+
+\NormalTok{euclidean\_dist\_partition\_A }\OtherTok{\textless{}{-}} \FunctionTok{dist}\NormalTok{(c\_partition\_A, }\AttributeTok{method =} \StringTok{"euclidean"}\NormalTok{)}
+
+\FunctionTok{names}\NormalTok{(method) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{( }\StringTok{"average"}\NormalTok{, }\StringTok{"single"}\NormalTok{, }\StringTok{"complete"}\NormalTok{, }\StringTok{"ward"}\NormalTok{)}
+\NormalTok{ac\_values1 }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x) \{}
+  \FunctionTok{agnes}\NormalTok{(euclidean\_dist\_partition\_A, }\AttributeTok{method =}\NormalTok{ x)}\SpecialCharTok{$}\NormalTok{ac}
+\NormalTok{\}}
+\FunctionTok{map\_dbl}\NormalTok{(method, ac\_values1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   average    single  complete      ward 
+## 0.7091020 0.6724675 0.7706708 0.8570846
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#The agglomerative coefficient obtained by Ward\textquotesingle{}s method is the largest. }
+\CommentTok{\#Let\textquotesingle{}s take a peek at the dendogram.}
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{123}\NormalTok{)}
+\NormalTok{hc\_ward\_partition\_A }\OtherTok{\textless{}{-}} \FunctionTok{agnes}\NormalTok{(euclidean\_dist\_partition\_A, }\AttributeTok{method =} \StringTok{"ward"}\NormalTok{)}
+\FunctionTok{pltree}\NormalTok{(hc\_ward\_partition\_A, }\AttributeTok{cex =} \FloatTok{0.5}\NormalTok{, }\AttributeTok{hang =} \SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\AttributeTok{main =} \StringTok{"Dendrogram of agnes for ward"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assignment5_HC__files/figure-latex/unnamed-chunk-5-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{clust\_comp\_partition\_A }\OtherTok{\textless{}{-}} \FunctionTok{cutree}\NormalTok{(hc\_ward\_partition\_A, }\AttributeTok{k =} \DecValTok{7}\NormalTok{)}
+
+\NormalTok{result}\OtherTok{\textless{}{-}}\FunctionTok{as.data.frame}\NormalTok{(}\FunctionTok{cbind}\NormalTok{(c\_partition\_A,clust\_comp\_partition\_A))}
+
+\CommentTok{\#result[result$clust\_comp\_partition\_A==1,]}
+\CommentTok{\#center1\textless{}{-}colMeans(result[result$clust\_comp\_partition\_A==1,])}
+\NormalTok{klust }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{:}\DecValTok{7}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in}\NormalTok{ klust) \{}
+  \FunctionTok{assign}\NormalTok{(}\FunctionTok{paste0}\NormalTok{(}\StringTok{"center\_"}\NormalTok{,i), }\FunctionTok{colMeans}\NormalTok{(result[result}\SpecialCharTok{$}\NormalTok{clust\_comp\_partition\_A}\SpecialCharTok{==}\NormalTok{i,]))}
+\NormalTok{\}}
+
+\NormalTok{centroids }\OtherTok{\textless{}{-}} \FunctionTok{rbind}\NormalTok{(center\_1,center\_2,center\_3,center\_4,center\_5,center\_6,center\_7}
+\NormalTok{                   )}
+
+\NormalTok{combined }\OtherTok{\textless{}{-}} \FunctionTok{as.data.frame}\NormalTok{(}\FunctionTok{rbind}\NormalTok{(centroids[,}\SpecialCharTok{{-}}\DecValTok{14}\NormalTok{], c\_partition\_B))}
+\NormalTok{temp1}\OtherTok{\textless{}{-}}\FunctionTok{get\_dist}\NormalTok{(combined)}
+\NormalTok{temp2}\OtherTok{\textless{}{-}}\FunctionTok{as.matrix}\NormalTok{(temp1)}
+\NormalTok{data1}\OtherTok{\textless{}{-}}\FunctionTok{data.frame}\NormalTok{(}\AttributeTok{data=}\FunctionTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{,}\FunctionTok{nrow}\NormalTok{(c\_partition\_B),}\DecValTok{1}\NormalTok{),}\AttributeTok{clusters=}\FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FunctionTok{nrow}\NormalTok{(c\_partition\_B)))}
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\FunctionTok{nrow}\NormalTok{(c\_partition\_B))}
+\NormalTok{\{}
+\NormalTok{  data1[i,}\DecValTok{2}\NormalTok{]}\OtherTok{\textless{}{-}}\FunctionTok{which.min}\NormalTok{(temp2[i}\SpecialCharTok{+}\DecValTok{7}\NormalTok{,}\DecValTok{1}\SpecialCharTok{:}\DecValTok{7}\NormalTok{])}
+\NormalTok{\}}
+
+\FunctionTok{cbind}\NormalTok{(temp3}\SpecialCharTok{$}\NormalTok{clust\_comp[}\DecValTok{38}\SpecialCharTok{:}\DecValTok{74}\NormalTok{],data1}\SpecialCharTok{$}\NormalTok{clusters)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       [,1] [,2]
+##  [1,]    4    4
+##  [2,]    5    6
+##  [3,]    2    2
+##  [4,]    3    3
+##  [5,]    6    5
+##  [6,]    2    2
+##  [7,]    2    2
+##  [8,]    4    4
+##  [9,]    3    3
+## [10,]    3    3
+## [11,]    4    4
+## [12,]    5    5
+## [13,]    4    2
+## [14,]    4    4
+## [15,]    7    5
+## [16,]    6    5
+## [17,]    6    5
+## [18,]    2    5
+## [19,]    4    4
+## [20,]    2    2
+## [21,]    6    5
+## [22,]    5    6
+## [23,]    5    6
+## [24,]    6    5
+## [25,]    6    5
+## [26,]    6    5
+## [27,]    3    3
+## [28,]    5    6
+## [29,]    6    5
+## [30,]    7    7
+## [31,]    4    4
+## [32,]    7    5
+## [33,]    5    5
+## [34,]    3    3
+## [35,]    5    5
+## [36,]    5    6
+## [37,]    3    3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(temp3}\SpecialCharTok{$}\NormalTok{clust\_comp[}\DecValTok{38}\SpecialCharTok{:}\DecValTok{74}\NormalTok{]}\SpecialCharTok{==}\NormalTok{data1}\SpecialCharTok{$}\NormalTok{clusters)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## FALSE  TRUE 
+##    17    20
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#We get 17 FALSE and 20 TRUE, indicating that the model is only partly stable.}
+\end{Highlighting}
+\end{Shaded}
+
+The elementary public schools would like to choose a set of cereals to
+include in their daily cafeterias. Every day a different cereal is
+offered, but all cereals should support a healthy diet. For this goal,
+you are requested to find a cluster of ``healthy cereals.'' Should the
+data be normalized? If not, how should they be used in the cluster
+analysis?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Nutri\_cereal }\OtherTok{\textless{}{-}} \FunctionTok{na.omit}\NormalTok{(}\FunctionTok{read.csv}\NormalTok{(}\StringTok{"A:/DATA\_SETS/Cereals.csv"}\NormalTok{))}
+\NormalTok{Nutri\_cereal}\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(Nutri\_cereal,clust\_comp)}
+
+
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\DecValTok{7}\NormalTok{)\{}
+  \FunctionTok{assign}\NormalTok{(}\FunctionTok{paste0}\NormalTok{(}\StringTok{"Cluster"}\NormalTok{,i), }\FunctionTok{mean}\NormalTok{(Nutri\_cereal[Nutri\_cereal}\SpecialCharTok{$}\NormalTok{clust\_comp}\SpecialCharTok{==}\NormalTok{i,}\StringTok{"rating"}\NormalTok{]))}
+
+\NormalTok{\}}
+
+\NormalTok{a}\OtherTok{\textless{}{-}}\FunctionTok{cbind}\NormalTok{(Cluster1,Cluster2,Cluster3,Cluster4,Cluster5,Cluster6,Cluster7)}
+\FunctionTok{paste}\NormalTok{(}\StringTok{"clearly cluster 1 has maximum rating"}\NormalTok{, }\FunctionTok{max}\NormalTok{(a),}\StringTok{" hence we\textquotesingle{}ll choose it"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "clearly cluster 1 has maximum rating 73.8444633333333  hence we'll choose it"
+\end{verbatim}
+
+We must normalize data since we are using the distance metic algorithm.
+Since the features of data vary, we must scale it to similar features.
+
+\end{document}
