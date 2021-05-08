@@ -3,9 +3,9 @@ title: "FinalProjectML"
 author: "Kunal Sharma"
 date: "07/05/2021"
 output:
+  pdf_document: default
   html_document:
     df_print: paged
-  pdf_document: default
   word_document: default
 ---
 
@@ -207,20 +207,20 @@ We are presenting it in a barplot since there are a few attributes that are cate
 Plotting Eating Habit Frequency (Not Specified,Vegetarian Who Eats Eggs, Vegetarian,Non-Vegetarian):
 
 ```{r}
-barplot(table(BSData$FEH,K_Means_All$cluster), xlab = "Clusters", ylab = "Frequency of Eating Habit", main = "The Eating Habit Frequency for each cluster",horiz=TRUE)
+barplot(table(BSData$FEH,K_Means_All$cluster), ylab = "Clusters", xlab = "Frequency of Eating Habit", main = "The Eating Habit Frequency for each cluster",horiz=TRUE)
 ```
 
 Plotting the Frequency of Gender(NA, Male, Female):
 
 ```{r}
-barplot(table(BSData$SEX,K_Means_All$cluster), xlab = "Clusters", ylab = "Frequency of Gender", main = "The Gender Frequency for each cluster",horiz=TRUE)
+barplot(table(BSData$SEX,K_Means_All$cluster), ylab = "Clusters", xlab = "Frequency of Gender", main = "The Gender Frequency for each cluster",horiz=TRUE)
 ```
 The female population has a higher purchasing rate, with females from clusters 1 and 2 having the most females.
 
 
 Plotting the Television Availability Frequency (Unspecified, Availability, Not Available):
 ```{r}
-barplot(table(BSData$CS, K_Means_All$cluster), xlab = "Clusters", ylab = "Frequency of Television availability", main = "The frequency of television availability",horiz=TRUE)
+barplot(table(BSData$CS, K_Means_All$cluster), ylab = "Clusters", xlab = "Frequency of Television availability", main = "The frequency of television availability",horiz=TRUE)
 ```
 
 
