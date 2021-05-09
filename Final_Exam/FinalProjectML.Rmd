@@ -3,10 +3,10 @@ title: "FinalProjectML"
 author: "Kunal Sharma"
 date: "07/05/2021"
 output:
+  word_document: default
   pdf_document: default
   html_document:
     df_print: paged
-  word_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -14,12 +14,13 @@ knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_chunk$set(warning =  FALSE)
 knitr::opts_chunk$set(message = FALSE)
 ```
-
-Problem Statement:
+<i>
+<b>Problem Statement:</b>
 
 CRISA has traditionally segmented markets on the basis of purchaser demographics. They would now like to
 segment the market based on two key sets of variables more directly related to the purchase process and to
 brand loyalty:
+
 1. Purchase behavior (volume, frequency, susceptibility to discounts, and brand loyalty)
 2. Basis of purchase (price, selling proposition)
 Doing so would allow CRISA to gain information about what demographic attributes are associated with
@@ -55,6 +56,10 @@ defined as a success in the classification model.
 
 
 
+
+<b>Solution:</b>
+
+
 ```{r}
 library(dplyr)
 library(ISLR)
@@ -73,11 +78,7 @@ For computing brand loyalty, we used data from branded purchases based on the cu
 
 
 When a customer is loyal to a business, the Max Brand purchase percentage is higher than the Other Brand purchase percentage. As a consequence, the Customer's brand loyalty is created.
-
-
-With k = 2, we use the kmeans clustering model to group the attributes that define brand loyalty into "Brand Loyal Customers" and "Not Brand Loyal Customers."
 ```{r}
-
 Loyal <- BSData[,23:31]
 
 Loyal$MaxBrand <- apply(Loyal,1,max)
@@ -85,6 +86,17 @@ Loyal$MaxBrand <- apply(Loyal,1,max)
 BathSoapBrandLoyalty <- cbind(BSData[,c(19, 13, 15, 12, 31, 14, 16,20)], MaxLoyal = Loyal$MaxBrand)
 
 BathSoapBrandLoyalty <- scale(BathSoapBrandLoyalty)
+fviz_nbclust(BathSoapBrandLoyalty, kmeans, method = "silhouette")
+
+
+```
+
+
+
+With k = 2, we use the kmeans clustering model to group the attributes that define brand loyalty into "Brand Loyal Customers" and "Not Brand Loyal Customers."
+
+
+```{r}
 
 K_model_2 <- kmeans(BathSoapBrandLoyalty, centers = 2, nstart = 25)
 

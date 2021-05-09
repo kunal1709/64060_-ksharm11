@@ -112,19 +112,28 @@ Problem Statement:
 CRISA has traditionally segmented markets on the basis of purchaser
 demographics. They would now like to segment the market based on two key
 sets of variables more directly related to the purchase process and to
-brand loyalty: 1. Purchase behavior (volume, frequency, susceptibility
-to discounts, and brand loyalty) 2. Basis of purchase (price, selling
-proposition) Doing so would allow CRISA to gain information about what
-demographic attributes are associated with different purchase behaviors
-and degrees of brand loyalty, and thus deploy promotion budgets more
-effectively. More effective market segmentation would enable CRISA's
-clients (in this case, a firm called IMRB) to design more cost-effective
-promotions targeted at appropriate segments. Thus, multiple promotions
-could be launched, each targeted at different market segments at
-different times of the year. This would result in a more cost-effective
-allocation of the promotion budget to different market segments. It
-would also enable IMRB to design more effective customer reward systems
-and thereby increase brand loyalty.
+brand loyalty:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Purchase behavior (volume, frequency, susceptibility to discounts, and
+  brand loyalty)
+\item
+  Basis of purchase (price, selling proposition) Doing so would allow
+  CRISA to gain information about what demographic attributes are
+  associated with different purchase behaviors and degrees of brand
+  loyalty, and thus deploy promotion budgets more effectively. More
+  effective market segmentation would enable CRISA's clients (in this
+  case, a firm called IMRB) to design more cost-effective promotions
+  targeted at appropriate segments. Thus, multiple promotions could be
+  launched, each targeted at different market segments at different
+  times of the year. This would result in a more cost-effective
+  allocation of the promotion budget to different market segments. It
+  would also enable IMRB to design more effective customer reward
+  systems and thereby increase brand loyalty.
+\end{enumerate}
 
 Question 1. Use k-means clustering to identify clusters of households
 based on:
@@ -164,6 +173,8 @@ variables as is? Consider using a single derived variable.
   be defined as a success in the classification model.
 \end{enumerate}
 
+Solution:
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{library}\NormalTok{(dplyr)}
@@ -194,10 +205,6 @@ When a customer is loyal to a business, the Max Brand purchase
 percentage is higher than the Other Brand purchase percentage. As a
 consequence, the Customer's brand loyalty is created.
 
-With k = 2, we use the kmeans clustering model to group the attributes
-that define brand loyalty into ``Brand Loyal Customers'' and ``Not Brand
-Loyal Customers.''
-
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{Loyal <-}\StringTok{ }\NormalTok{BSData[,}\DecValTok{23}\OperatorTok{:}\DecValTok{31}\NormalTok{]}
@@ -207,7 +214,18 @@ Loyal Customers.''
 \NormalTok{BathSoapBrandLoyalty <-}\StringTok{ }\KeywordTok{cbind}\NormalTok{(BSData[,}\KeywordTok{c}\NormalTok{(}\DecValTok{19}\NormalTok{, }\DecValTok{13}\NormalTok{, }\DecValTok{15}\NormalTok{, }\DecValTok{12}\NormalTok{, }\DecValTok{31}\NormalTok{, }\DecValTok{14}\NormalTok{, }\DecValTok{16}\NormalTok{,}\DecValTok{20}\NormalTok{)], }\DataTypeTok{MaxLoyal =}\NormalTok{ Loyal}\OperatorTok{$}\NormalTok{MaxBrand)}
 
 \NormalTok{BathSoapBrandLoyalty <-}\StringTok{ }\KeywordTok{scale}\NormalTok{(BathSoapBrandLoyalty)}
+\KeywordTok{fviz_nbclust}\NormalTok{(BathSoapBrandLoyalty, kmeans, }\DataTypeTok{method =} \StringTok{"silhouette"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
+\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+With k = 2, we use the kmeans clustering model to group the attributes
+that define brand loyalty into ``Brand Loyal Customers'' and ``Not Brand
+Loyal Customers.''
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{K_model_}\DecValTok{2}\NormalTok{ <-}\StringTok{ }\KeywordTok{kmeans}\NormalTok{(BathSoapBrandLoyalty, }\DataTypeTok{centers =} \DecValTok{2}\NormalTok{, }\DataTypeTok{nstart =} \DecValTok{25}\NormalTok{)}
 
 \NormalTok{BathSoapBrandLoyalty <-}\StringTok{ }\KeywordTok{cbind}\NormalTok{(BathSoapBrandLoyalty, }\DataTypeTok{Cluster =}\NormalTok{ K_model_}\DecValTok{2}\OperatorTok{$}\NormalTok{cluster)}
@@ -216,7 +234,7 @@ Loyal Customers.''
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-3-1.pdf}
+\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-4-1.pdf}
 Customers in Cluster 1 are Brand Loyal, while customers in Cluster 2 are
 Brand Disloyal because they are unconcerned regarding products.
 
@@ -233,7 +251,7 @@ below.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-4-1.pdf}
+\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-5-1.pdf}
 
 Let's take a look at the data for consumer purchase conduct.
 
@@ -299,7 +317,7 @@ promotions and price categories.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-7-1.pdf}
+\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-8-1.pdf}
 The K means Clustering model is computed in order to measure the
 customer's purchasing pattern. In this case, k = 4 will be used.
 
@@ -314,7 +332,7 @@ customer's purchasing pattern. In this case, k = 4 will be used.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-8-1.pdf}
+\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-9-1.pdf}
 
 Now we must understand the consumers' brand loyalty as well as their
 purchasing behavior while developing a concept.
@@ -327,7 +345,7 @@ purchasing behavior while developing a concept.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-9-1.pdf}
+\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-10-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -353,7 +371,7 @@ a result, we'll use k = 4 here.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-10-1.pdf}
+\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-11-1.pdf}
 
 For each cluster, the Demographic result is computed.
 
@@ -379,7 +397,7 @@ cluster.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-11-1.pdf}
+\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-12-1.pdf}
 
 We are presenting it in a barplot since there are a few attributes that
 are categorical.
@@ -393,7 +411,7 @@ Vegetarian,Non-Vegetarian):
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-12-1.pdf}
+\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-13-1.pdf}
 
 Plotting the Frequency of Gender(NA, Male, Female):
 
@@ -403,7 +421,7 @@ Plotting the Frequency of Gender(NA, Male, Female):
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-13-1.pdf}
+\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-14-1.pdf}
 The female population has a higher purchasing rate, with females from
 clusters 1 and 2 having the most females.
 
@@ -416,7 +434,7 @@ Availability, Not Available):
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-14-1.pdf}
+\includegraphics{FinalProjectML_files/figure-latex/unnamed-chunk-15-1.pdf}
 
 Since almost all viewers have access to television, having a promotional
 offer on television can be effective in attracting customers.
